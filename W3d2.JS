@@ -296,8 +296,104 @@ console.log("Kristyn is rocking that " +kristynsCloset[2] + " today!");
 //2.Kristyn just bought some sweet shades! Add "raybans"to her closet after "yellow knit hat".
 kristynsCloset.splice(6, 0, "raybans");
 console.log(kristynsCloset);
+
  
- 
+//3.Kristyn spilled coffee on her hat... modify this item to read "stained knit hat" instead of yellow.
+kristynsCloset[5]="stained knit hat";
+console.log(kristynsCloset);
+//4.Put together an outfits for Thom! Using bracket notation, access the first element in Thom's shirts array.
+console.log(thomsCloset[0][0]);
+//5.In the same way, access one item from Thom's pants array.
+console.log(thomsCloset[1][1]);
+//6.Access one item from Thom's accessories array.
+console.log(thomsCloset[2][1]);
+//7.Log a sentence about what Thom's wearing. Example: "Thom is looking fierce in a grey button-up, jeans and wool scarf!"
+console.log(`Thom is looking fierce in a ${thomsCloset[0][0]},${thomsCloset[1][1]} and ${thomsCloset[2][1]}!`);
+//8.Get more specific about what kind of PJs Thom's wearing this winter. Modify the name of his PJ pants to Footie Pajamas.
+thomsCloset[1][2]="Footie Pajamas";
+console.log(thomsCloset[1]);
+
+//IV. Functions
+
+
+//A. printGreeting
+const printGreeting=(name)=>{console.log(`Hello there, ${name}!`);}
+printGreeting("Slimer");
+
+//B. printCool
+//Write a function printCool that accepts one parameter, name as an argument. 
+//The function should print the name and a message saying that that person is cool.
+const printCool=(name)=>{console.log(`${name} is cool`);}
+printCool("Captain Reynolds");
+
+//C. calculateCube
+//Write a function calculateCube that takes a single number 
+//and prints the volume of a cube made from that number.
+const calculateCube=(number)=>{return number**3;}
+console.log(calculateCube(5));
+
+//D. isVowel
+//Write a function isVowel that takes a character (i.e. a string of length 1) and 
+//returns true if it is a vowel, false otherwise. The vowel could be upper or lower case. 
+//Test your function on every vowel and make sure it's working. 
+//In general, when you write functions, take a minute to test them with different values
+// to make sure they behave the way you want.
+const isVowel= (char) => {
+    let vowels= ['a','i','e','o','u','A','I','E','O','U'];
+    return vowels.includes(char);
+ }
+console.log(isVowel("a"));
+
+//E. getTwoLengths
+//Write a function getTwoLengths that accepts two parameters (strings).
+// The function should return an array of numbers where each number is 
+//the length of the corresponding string.
+const getTwoLengths = (string1,string2) => {
+    let arr =[];
+    arr.push(string1.length,string2.length);
+    return arr;
+}
+console.log(getTwoLengths("Hank", "Hippopopalous"));
+
+//F. getMultipleLengths
+//Write a function getMultipleLengths that accepts a single parameter as an argument: 
+//an array of strings. The function should return an array of numbers where each number 
+//is the length of the corresponding string.
+const getMultipleLengths =(arr) => {
+    return arr.map(ele => ele.length);
+}
+console.log(getMultipleLengths(["hello", "what", "is", "up", "dude"]));
+
+//G. maxOfThree
+//Define a function maxOfThree that takes three numbers as arguments and 
+//returns the largest of them. If all numbers are the same, it doesn't matter 
+//which one is returned. If the two largest numbers are the same, one of them 
+//should be returned. Be sure to test it with larger values in each of the three locations.
+const maxOfThree  =(num1,num2,num3) =>{
+    let arr=[num1,num2,num3];
+    console.log(arr.sort());
+    return arr[2];
+}
+console.log(maxOfThree(6, 9, 1));
+console.log(maxOfThree(6, 6, 1));
+console.log(maxOfThree(6, 6, 6));
+
+//H. printLongestWord
+//Write a function printLongestWord that accepts a single argument, 
+//an array of strings. The method should return the longest word in the array. 
+//In case of a tie, the method should return the word that appears first in the array.
+const printLongestWord = (arr) =>  {
+    let longestWord = "";
+    for(let i = 0; i < arr.length; i++){
+      if(arr[i].length > longestWord.length){
+           longestWord = arr[i];
+       }
+    }
+   return longestWord;
+}
+console.log(printLongestWord(["BoJack", "Princess", "Diane", "a", "Max", "Peanutbutter", "big", "Todd"]));
+console.log(printLongestWord(["BoJack", "Princess", "Diane", "a", "Max", "PeanutCookie", "Peanutbutter", "big", "Todd"]));
+
 
 
 
